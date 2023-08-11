@@ -141,7 +141,8 @@ li:hover {
 	width: fit-content;
 	color: #1D6154;
 	font-family: Syne;
-	font-size: 1rem;
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .gallery {
