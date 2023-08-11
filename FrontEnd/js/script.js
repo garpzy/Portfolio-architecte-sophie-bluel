@@ -29,11 +29,32 @@ function showAllWorks(works){
         gallery.appendChild(workFigure)
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
+        workFigure.classList.add('active')
     }
 }
 
-function filtrer(category){
-    let filtres = document.querySelector(".filtres")
-    let filtre = document.createElement("div")
-    filtre.classList.add("filtre")
+//fetch les categories
+fetch('http://localhost:5678/api/categories')
+  .then(response => response.json())
+  .then(categories => {
+    console.table(categories)
+    afficherFiltres(categories)
+  })
+
+  .catch(function(error) {
+    alert(error);
+    })
+
+
+// Afficher les filtres selon les catégories
+function afficherFiltres(categories){
+    let filtres = document.querySelector(".filtres") 
+    for (let category of categories){
+        let filtre = document.createElement("div")
+        filtre.classList.add("filtre")
+        filtre.innerText = category.name
+
+        filtres.appendChild(filtre)
+    }
+
 }
