@@ -19,24 +19,23 @@ function showAllWorks(works){
         let workFigure = document.createElement("figure")
         let workImg = document.createElement("img")
         let workFigCaption = document.createElement("figcaption")
-        let workDataId = document.createElement("dataset")
+        let workCategoryId = document.createElement("dataset")
         
         // inject the API data in the elements
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
-        workDataId = work.categoryId
+        workCategoryId = work.categoryId
 
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
-        workFigure.dataset.id = workDataId
+        // leur donner le categoryId dans un data-id
+        workFigure.dataset.id = workCategoryId
         //je les rends par défaut active
         workFigure.classList.add('active')
-        // leur donner le categoryId idoine dans un data-id
-        console.log(workDataId);
     }
 }
 
@@ -59,9 +58,16 @@ fetch('http://localhost:5678/api/categories')
 function afficherFiltres(categories){
     let filtres = document.querySelector(".filtres") 
     for (let category of categories){
+        //créer les nouveaux élements : les filtres et leur data-set
         let filtre = document.createElement("div")
-        filtre.classList.add("filtre")
+        let filtreCategoryId = document.createElement("dataset")
+        //injecter l'API
+        filtreCategoryId = category.id
+        console.log(filtreCategoryId);
         filtre.innerText = category.name
+        filtre.classList.add("filtre")
+        //injecter dans le DOM
+        filtre.dataset.id = filtreCategoryId
         filtres.appendChild(filtre)
     }
 
@@ -71,8 +77,14 @@ function filtrer(filtreActive){
     let filtres = document.querySelectorAll(".filtres div") 
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){
-            let filtreActive = this.innerText
-            console.log(filtreActive);
+            let filtreActive = this.dataset.id
+            let works = document.querySelectorAll("figure")
+            for (let work of works){
+                work.classList.replace("active", "inactive")
+                if(filtreActive === work.dataset.id){
+                    work.classList.replace("inactive", "active")
+                }
+            }
         })
     }
 }
