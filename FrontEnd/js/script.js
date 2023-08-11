@@ -2,7 +2,7 @@
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
   .then(works => {
-    console.table(works)
+    // console.table(works)
     showAllWorks(works)
   })
 
@@ -29,7 +29,11 @@ function showAllWorks(works){
         gallery.appendChild(workFigure)
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
+        //je les rends par défaut active
         workFigure.classList.add('active')
+        // leur donner le categoryId idoine dans une class (pas sûre que ce soit la meilleure)
+        workFigure.classList.add(work.categoryId)
+    
     }
 }
 
@@ -37,8 +41,10 @@ function showAllWorks(works){
 fetch('http://localhost:5678/api/categories')
   .then(response => response.json())
   .then(categories => {
-    console.table(categories)
+    // console.table(categories)
     afficherFiltres(categories)
+    filtrer(categories)
+
   })
 
   .catch(function(error) {
@@ -53,8 +59,18 @@ function afficherFiltres(categories){
         let filtre = document.createElement("div")
         filtre.classList.add("filtre")
         filtre.innerText = category.name
-
         filtres.appendChild(filtre)
     }
 
 }
+
+function filtrer(categories){
+    let filtres = document.querySelectorAll(".filtres div") 
+    for (let filtre of filtres){
+        filtre.addEventListener("click", function(){
+            let filtreActive = this.innerText
+            console.log(filtreActive);
+        })
+    }
+}
+
