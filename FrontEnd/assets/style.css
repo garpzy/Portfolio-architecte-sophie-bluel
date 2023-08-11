@@ -129,11 +129,19 @@ li:hover {
 .filtres{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 1em;
 }
 
 .filtre{
-	border-radius: ;
+	border-radius: 60px;
+	border: #1D6154 2px solid;
+	padding: 10px 15px;
+	width: fit-content;
+	color: #1D6154;
+	font-family: Syne;
+	font-size: 1rem;
 }
 
 .gallery {
