@@ -23,6 +23,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+/*variables*/
+:root{
+--green: #1D6154;
+--orange: #B1663C;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -68,7 +75,7 @@ h1{
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: var(--orange)
 }
 
 h1 > span {
@@ -82,7 +89,7 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: var(--green)
 }
 nav ul {
 	display: flex;
@@ -136,11 +143,11 @@ li:hover {
 
 .filtre{
 	border-radius: 60px;
-	border: #1D6154 2px solid;
+	border: var(--green) 2px solid;
 	padding: 10px 15px;
 	width: fit-content;
-	color: #1D6154;
-	font-family: Syne;
+	color: var(--green);
+	font-family: 'Syne';
 	font-size: 16px;
 	font-weight: 700;
 }
@@ -193,7 +200,7 @@ input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
-	background-color: #1D6154;
+	background-color: var(--green);
 	margin : 2em auto ;
 	width: 180px;
 	text-align: center;
