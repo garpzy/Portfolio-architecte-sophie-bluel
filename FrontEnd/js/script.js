@@ -19,21 +19,24 @@ function showAllWorks(works){
         let workFigure = document.createElement("figure")
         let workImg = document.createElement("img")
         let workFigCaption = document.createElement("figcaption")
+        let workDataId = document.createElement("dataset")
         
         // inject the API data in the elements
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
+        workDataId = work.categoryId
+
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
+        workFigure.dataset.id = workDataId
         //je les rends par défaut active
         workFigure.classList.add('active')
-        // leur donner le categoryId idoine dans une class (pas sûre que ce soit la meilleure)
-        workFigure.classList.add(work.categoryId)
-    
+        // leur donner le categoryId idoine dans un data-id
+        console.log(workDataId);
     }
 }
 
@@ -64,7 +67,7 @@ function afficherFiltres(categories){
 
 }
 
-function filtrer(categories){
+function filtrer(filtreActive){
     let filtres = document.querySelectorAll(".filtres div") 
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){

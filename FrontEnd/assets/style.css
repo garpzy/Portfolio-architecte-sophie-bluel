@@ -27,6 +27,7 @@ time, mark, audio, video {
 /*variables*/
 :root{
 --green: #1D6154;
+--green-light : #3a9282;
 --orange: #B1663C;
 }
 
@@ -160,6 +161,19 @@ li:hover {
 	font-weight: 700;
 	cursor: pointer;
 }
+
+.filtre:hover{
+	background-color: var(--green-light);
+	border: var(--green-light) solid 2px;
+	color: white;
+}
+
+.filtre:active{
+	background-color: var(--green);
+	border: var(--green) solid 2px;
+	color: white;
+}
+
 
 .gallery {
 	width: 100%;
