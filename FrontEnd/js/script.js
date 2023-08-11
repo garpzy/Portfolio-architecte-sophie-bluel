@@ -10,8 +10,8 @@ fetch('http://localhost:5678/api/works')
     alert(error);
     })
 
-  // GOAL : à chaque projet il crée une figure dans .gallery
-  function showAllWorks(works){
+// GOAL : à chaque projet il crée une figure dans .gallery
+function showAllWorks(works){
     let gallery = document.querySelector(".gallery")
 
     for (let work of works){
@@ -30,5 +30,10 @@ fetch('http://localhost:5678/api/works')
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
     }
+}
 
-  }
+function filtrer(category){
+    let filtres = document.querySelector(".filtres")
+    let filtre = document.createElement("div")
+    filtre.classList.add("filtre")
+}

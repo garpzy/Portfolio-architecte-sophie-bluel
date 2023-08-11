@@ -125,6 +125,17 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.filtres{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.filtre{
+	border-radius: ;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
