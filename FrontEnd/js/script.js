@@ -1,7 +1,5 @@
 let gallery = document.querySelector(".gallery");
-console.log("salut");
-fetch(". gallery figure")
-  .then(function (response) {
-    return response.blob();
-    
-  })
+
+fetch('.gallery figure')
+  .then(res => res.json())
+  .then(projet => document.createElement(""))
