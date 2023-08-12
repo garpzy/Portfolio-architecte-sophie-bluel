@@ -78,12 +78,17 @@ function filtrer(filtreActive){
         filtre.addEventListener("click", function(){
             // je récupère le categoryId du filtre où je clic 
             let filtreActive = this.dataset.id
+            // je récupère aussi l'id (il n'y que "tout" qui fonctionne comme ça)
+            let tout = this.id
             let works = document.querySelectorAll("figure")
             // je vais comparer les categoryId des works avec celui du filtre actif
             // je change la class des works selon si l'id est le même ou pas
             for (let work of works){
                 work.classList.replace("active", "inactive")
                 if(filtreActive === work.dataset.id){
+                    work.classList.replace("inactive", "active")
+                } 
+                if(tout==="Tout"){
                     work.classList.replace("inactive", "active")
                 }
             }
