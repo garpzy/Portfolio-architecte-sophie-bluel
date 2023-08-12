@@ -68,10 +68,11 @@ function afficherFiltres(categories){
         filtres.appendChild(filtre)
         filtre.dataset.id = filtreCategoryId
     }
+
 }
 
 //filtrer selon  le filtre actif ou Tout
-function filtrer(){
+function filtrer(filtreActive){
     let filtres = document.querySelectorAll(".filtres div")
     // par défaut Tout est sélectionné
     let toutDefaut = document.getElementById("Tout") 
