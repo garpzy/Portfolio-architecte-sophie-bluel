@@ -13,7 +13,7 @@ fetch('http://localhost:5678/api/works')
 // GOAL : à chaque projet il crée une figure dans .gallery
 function showAllWorks(works){
     let gallery = document.querySelector(".gallery")
-
+    // je créé un work pour tous les works présents dans works 
     for (let work of works){
         // créer les nouveaux éléments
         let workFigure = document.createElement("figure")
@@ -25,8 +25,8 @@ function showAllWorks(works){
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
+        //celui-ci me sert pour les filtres
         workCategoryId = work.categoryId
-
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)
@@ -46,13 +46,11 @@ fetch('http://localhost:5678/api/categories')
     // console.table(categories)
     afficherFiltres(categories)
     filtrer(categories)
-
   })
 
   .catch(function(error) {
     alert(error);
     })
-
 
 // Afficher les filtres selon les catégories
 function afficherFiltres(categories){
@@ -67,18 +65,22 @@ function afficherFiltres(categories){
         filtre.innerText = category.name
         filtre.classList.add("filtre")
         //injecter dans le DOM
-        filtre.dataset.id = filtreCategoryId
         filtres.appendChild(filtre)
+        filtre.dataset.id = filtreCategoryId
     }
 
 }
 
+//filtrer selon  le filtre actif
 function filtrer(filtreActive){
     let filtres = document.querySelectorAll(".filtres div") 
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){
+            // je récupère le categoryId du filtre où je clic 
             let filtreActive = this.dataset.id
             let works = document.querySelectorAll("figure")
+            // je vais comparer les categoryId des works avec celui du filtre actif
+            // je change la class des works selon si l'id est le même ou pas
             for (let work of works){
                 work.classList.replace("active", "inactive")
                 if(filtreActive === work.dataset.id){
