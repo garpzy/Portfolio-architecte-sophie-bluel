@@ -134,6 +134,10 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+figcaption{
+	margin-top: 8px;
+}
+
 .active {
 	display: block;
 }
@@ -147,7 +151,7 @@ li:hover {
 	flex-direction: row;
 	justify-content: center;
 	gap: 10px;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 
 .filtre{

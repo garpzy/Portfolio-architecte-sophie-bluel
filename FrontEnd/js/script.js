@@ -68,12 +68,14 @@ function afficherFiltres(categories){
         filtres.appendChild(filtre)
         filtre.dataset.id = filtreCategoryId
     }
-
 }
 
 //filtrer selon  le filtre actif ou Tout
-function filtrer(filtreActive){
-    let filtres = document.querySelectorAll(".filtres div") 
+function filtrer(){
+    let filtres = document.querySelectorAll(".filtres div")
+    // par défaut Tout est sélectionné
+    let toutDefaut = document.getElementById("Tout") 
+    toutDefaut.classList.add("clicked")
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){
             //ma fonction pour chercker si le filtre est actif ou pas
@@ -85,6 +87,7 @@ function filtrer(filtreActive){
             let works = document.querySelectorAll("figure")
             // je vais comparer les categoryId des works avec celui du filtre actif
             // je change la class des works selon si l'id est le même ou pas
+            // et j'ajoute la class clicked au filtre si c'est le cas
             for (let work of works){
                 work.classList.replace("active", "inactive")
                 if(filtreActive === work.dataset.id){
@@ -94,9 +97,7 @@ function filtrer(filtreActive){
                 if(tout==="Tout"){
                     work.classList.replace("inactive", "active")
                 }
-            }
-            //je dois laisser le filtre actif en style cliqué
-            
+            }            
         })
     }
 }
