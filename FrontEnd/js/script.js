@@ -72,7 +72,7 @@ function afficherFiltres(categories){
 }
 
 //filtrer selon  le filtre actif ou Tout
-function filtrer(filtreActive){
+function filtrer(){
     let filtres = document.querySelectorAll(".filtres div")
     // par défaut Tout est sélectionné
     let toutDefaut = document.getElementById("Tout") 
