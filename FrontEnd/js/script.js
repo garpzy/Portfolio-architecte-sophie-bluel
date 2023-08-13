@@ -25,8 +25,9 @@ function showAllWorks(works){
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
-        //celui-ci me sert pour les filtres
         workCategoryId = work.categoryId
+        // ça marche aussi, mais je crois que j'ai quand même besoin de mon autre fetch
+        // workCategoryId = work.category.id
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)
