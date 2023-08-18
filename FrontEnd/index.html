@@ -12,13 +12,18 @@
 	<script src="./js/script.js" defer></script>
 </head>
 <body>
+	<div class="barreEdition inactive edition">
+		<i></i>Mode édition
+		<button> Publier les changements</button>
+	</div>
 	<header>
 		<a href="index.html"><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a>
 		<nav>
 			<ul>
 				<li><a href="#portfolio">projets</a></li>
 				<li><a href="#contact">contact</a></li>
-				<li><a href="login.html">login</a></li>
+				<li id="login"><a href="login.html">login</a></li>
+				<li id="logout" class="edition inactive">logout</li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -27,6 +32,7 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
+				<button class="edition inactive">Modifier</button>
 			</figure>
 			<article>
 				<h2>Designer d'espace</h2>
@@ -36,7 +42,10 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
+			<div class="titreMesProjets">
+				<h2>Mes Projets </h2>
+				<button class="edition inactive">Modifier</button>
+			</div>
 			<div class="filtres">
 				<div id="Tout" class="filtre">Tout</div>
 				<!-- JS injecté ici -->		

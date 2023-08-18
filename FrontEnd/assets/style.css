@@ -159,12 +159,18 @@ figcaption{
 	margin-top: 8px;
 }
 
+.titreMesProjets{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .active {
 	display: block;
 }
 
 .inactive {
-	display: none;
+	display: none!important;
 }
 
 .filtres{
@@ -318,6 +324,16 @@ form{
 	border: 2px solid  rgb(176, 33, 33);
 }
 
+.barreEdition{
+	color: white;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px;
+	gap: 20px;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -327,3 +343,4 @@ footer nav ul {
 footer{
 	margin-top: auto;
 }
+

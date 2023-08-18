@@ -41,14 +41,13 @@ function showAllWorks(works){
 fetch('http://localhost:5678/api/categories')
   .then(response => response.json())
   .then(categories => {
-    // console.table(categories)
     afficherFiltres(categories)
     filtrer(categories)
   })
 
   .catch(function(error) {
     alert(error);
-    })
+})
 
 // Afficher les filtres selon les catégories
 function afficherFiltres(categories){
@@ -105,3 +104,28 @@ function checkIfActive(){
         }
     }
 }
+
+//Récupérer le token et afficher les éléments "modifier" en fonction
+let data = sessionStorage.getItem("token") 
+let editions = document.querySelectorAll(".edition")
+let login = document.getElementById("login")
+for (let edition of editions){
+    if (data = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY5MjM0ODMxNSwiZXhwIjoxNjkyNDM0NzE1fQ.O8PsHUiRxVszfNiBq3WT7ED-VJsmazDZ0ThCRvosFJs'){
+    console.log("connecté");
+    edition.classList.remove("inactive")
+    login.classList.add("inactive")
+    }
+}
+
+//logout = vider le storage, ça marche
+let btnLogout = document.getElementById("logout")
+btnLogout.addEventListener("click", function(){
+    sessionStorage.removeItem("token")
+    console.log("sessionStorage vidé");
+    for (let edition of editions){
+        edition.classList.toggle("inactive")
+        login.classList.remove("inactive")
+
+    }
+})
+
