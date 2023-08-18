@@ -117,7 +117,7 @@ for (let edition of editions){
     }
 }
 
-//logout = vider le storage, ça marche
+//LOG OUT
 let btnLogout = document.getElementById("logout")
 btnLogout.addEventListener("click", function(){
     sessionStorage.removeItem("token")
@@ -125,7 +125,6 @@ btnLogout.addEventListener("click", function(){
     for (let edition of editions){
         edition.classList.toggle("inactive")
         login.classList.remove("inactive")
-
     }
 })
 

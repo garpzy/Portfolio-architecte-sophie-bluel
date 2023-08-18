@@ -14,7 +14,7 @@
 <body>
 	<div class="barreEdition inactive edition">
 		<i></i>Mode édition
-		<button> Publier les changements</button>
+		<button id="publishChanges"> Publier les changements</button>
 	</div>
 	<header>
 		<a href="index.html"><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a>
@@ -24,7 +24,7 @@
 				<li><a href="#contact">contact</a></li>
 				<li id="login"><a href="login.html">login</a></li>
 				<li id="logout" class="edition inactive">logout</li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram" id="iconInsta"></li>
 			</ul>
 		</nav>
 	</header>
@@ -32,7 +32,7 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
-				<button class="edition inactive">Modifier</button>
+				<figcaption id="modifierPhoto"><button class="edition inactive">modifier</button></figcaption>
 			</figure>
 			<article>
 				<h2>Designer d'espace</h2>
@@ -44,7 +44,7 @@
 		<section id="portfolio">
 			<div class="titreMesProjets">
 				<h2>Mes Projets </h2>
-				<button class="edition inactive">Modifier</button>
+				<button class="edition inactive">modifier</button>
 			</div>
 			<div class="filtres">
 				<div id="Tout" class="filtre">Tout</div>

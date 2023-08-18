@@ -85,7 +85,8 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	align-items: center;
 }
 section {
 	margin: 50px 0
@@ -127,6 +128,11 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+#iconInsta{
+	height: 20px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -152,7 +158,6 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 figcaption{
@@ -163,6 +168,13 @@ figcaption{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 16px;
+	margin-bottom: 1.5rem;
+}
+
+.titreMesProjets h2{
+	margin: 0px;
+	padding: 0px;
 }
 
 .active {
@@ -332,6 +344,25 @@ form{
 	align-items: center;
 	padding: 16px;
 	gap: 20px;
+}
+
+
+
+#publishChanges{
+	background-color: white;
+	color: black;
+	border-radius: 40px;
+	border: 0px;
+	padding: 12px 24px;
+}
+
+button.edition{
+	border: 0px;
+	background-color: white;
+}
+
+#modifierPhoto{
+	margin-left: 10%;
 }
 
 footer nav ul {
