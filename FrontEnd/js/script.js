@@ -19,14 +19,11 @@ function showAllWorks(works){
         let workFigure = document.createElement("figure")
         let workImg = document.createElement("img")
         let workFigCaption = document.createElement("figcaption")
-        let workCategoryId = document.createElement("dataset")
         
         // inject the API data in the elements
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
-        workCategoryId = work.categoryId
-        // ça marche aussi, mais je crois que j'ai quand même besoin de mon autre fetch
         // workCategoryId = work.category.id
 
         // construct the nodes of the elements / lier au DOM
@@ -34,7 +31,7 @@ function showAllWorks(works){
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
         // leur donner le categoryId dans un data-id
-        workFigure.dataset.id = workCategoryId
+        workFigure.dataset.id = work.category.id
         //je les rends par défaut active
         workFigure.classList.add('active')
     }
@@ -59,17 +56,13 @@ function afficherFiltres(categories){
     for (let category of categories){
         //créer les nouveaux élements : les filtres et leur data-set
         let filtre = document.createElement("div")
-        let filtreCategoryId = document.createElement("dataset")
         //injecter l'API
-        filtreCategoryId = category.id
-        console.log(filtreCategoryId);
         filtre.innerText = category.name
+        filtre.dataset.id = category.id
         filtre.classList.add("filtre")
         //injecter dans le DOM
         filtres.appendChild(filtre)
-        filtre.dataset.id = filtreCategoryId
     }
-
 }
 
 //filtrer selon  le filtre actif ou Tout
@@ -85,7 +78,7 @@ function filtrer(){
             // je récupère le categoryId du filtre où je clic 
             let filtreActive = this.dataset.id
             // je récupère aussi l'id (il n'y que "tout" qui fonctionne comme ça)
-            let tout = this.id
+            let id = this.id
             let works = document.querySelectorAll("figure")
             // je vais comparer les categoryId des works avec celui du filtre actif
             // je change la class des works selon si l'id est le même ou pas
@@ -96,7 +89,7 @@ function filtrer(){
                     work.classList.replace("inactive", "active")
                     filtre.classList.add("clicked")
                 } 
-                if(tout==="Tout"){
+                if(id==="Tout"){
                     work.classList.replace("inactive", "active")
                 }
             }            

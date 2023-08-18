@@ -297,7 +297,6 @@ form{
 	align-items: center;
 	width: 100%;	
 	color: var(--grey);
-
 }
 
 .champs{
@@ -311,6 +310,13 @@ form{
 	text-decoration: underline;
 }
 
+.msgErreur{
+	color: rgb(176, 33, 33);
+	padding: 16px 32px;
+	background-color: rgb(247, 228, 228);
+	border-radius: 16px;
+	border: 2px solid  rgb(176, 33, 33);
+}
 
 footer nav ul {
 	display: flex;
