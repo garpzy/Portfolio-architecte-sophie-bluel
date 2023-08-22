@@ -1,3 +1,5 @@
+@import url(style.css);
+
 .dialog {
     top: 0px;
     left: 0px; 
@@ -7,18 +9,27 @@
 }
 
 .modalWrapper{
+    overflow: auto;
     width: 630px;
     min-height: 400px;
+    max-height: 70vh;
     background-color: #fff;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    border-radius: 10px;
 }
 
 .modal{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.closeBar{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
