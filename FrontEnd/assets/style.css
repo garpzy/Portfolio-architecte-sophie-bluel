@@ -344,6 +344,10 @@ form{
 	align-items: center;
 	padding: 16px;
 	gap: 20px;
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	left: 50%;
 }
 
 
@@ -359,6 +363,11 @@ form{
 button.edition{
 	border: 0px;
 	background-color: white;
+}
+
+.modeEdition{
+	display: flex;
+	gap: 12px;
 }
 
 #modifierPhoto{
