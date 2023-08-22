@@ -9,7 +9,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/modal.css">
 	<script src="./js/script.js" defer></script>
+	<script src="./js/modal.js" defer></script>
 	<script src="https://kit.fontawesome.com/4b8ac7191b.js" crossorigin="anonymous"></script> 
 </head>
 <body>
@@ -33,7 +35,9 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
-				<figcaption id="modifierPhoto"><button class="edition inactive">modifier</button></figcaption>
+				<figcaption id="modifierPhoto">		
+				<button class ="modeEdition edition inactive"><i class="fa-regular fa-pen-to-square"></i>Mode édition</button>
+				</figcaption>
 			</figure>
 			<article>
 				<h2>Designer d'espace</h2>
@@ -45,7 +49,7 @@
 		<section id="portfolio">
 			<div class="titreMesProjets">
 				<h2>Mes Projets </h2>
-				<button class="edition inactive">modifier</button>
+				<button id="btnModifierProjet" class ="modeEdition edition inactive"><i class="fa-regular fa-pen-to-square"></i>Mode édition</button>
 			</div>
 			<div class="filtres">
 				<div id="Tout" class="filtre">Tout</div>
@@ -68,6 +72,18 @@
 				<input type="submit" value="Envoyer">
 			</form>
 		</section>
+		<dialog id="modalProjet" class="dialog">
+			<div class="modal">
+				<div class="modalWrapper js-modal-stop">
+					<button class="close">Close</button>
+					<h3>Gallerie photo</h3>
+					<div class="galleryPhoto"></div>
+					<div class="separateur"></div>
+					<button class="button">Ajouter un projet</button>
+					<button id="supprimer">Supprimer la gallerie</button>
+				</div>
+			</div>
+		</dialog>
 	</main>
 	<footer>
 		<nav>

@@ -41,12 +41,18 @@ main {
 	align-items: center;
 }
 
+h3{
+	font-size: 26px;
+	font-weight: 400;
+}
+
 /*variables*/
 :root{
 --green: #1D6154;
 --green-light : #3a9282;
 --orange: #B1663C;
 --grey: #3D3D3D;
+--red: #D65353;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -298,6 +304,9 @@ input[type="text"], input[type="password"]{
 	font-family: 'Syne';
 	font-size: 16px;
 	font-weight: 700;
+}
+
+button{
 	cursor: pointer;
 }
 
@@ -384,3 +393,16 @@ footer{
 	margin-top: auto;
 }
 
+.separateur{
+	background: grey;
+	height: 1px;
+	width: 100%;
+}
+
+#supprimer{
+	color: var(--red);
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFF;
+	border: 0px;
+}

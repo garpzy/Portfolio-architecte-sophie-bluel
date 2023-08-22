@@ -114,6 +114,7 @@ for (let edition of editions){
     console.log("connecté");
     edition.classList.remove("inactive")
     login.classList.add("inactive")
+    document.querySelector(".filtres").classList.add("inactive")
     }
 }
 

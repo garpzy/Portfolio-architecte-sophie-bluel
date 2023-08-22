@@ -1,0 +1,24 @@
+.dialog {
+    top: 0px;
+    left: 0px; 
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modalWrapper{
+    width: 630px;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
