@@ -10,11 +10,11 @@
 
 .modalWrapper{
     overflow: auto;
-    width: 630px;
+    width: 430px;
     min-height: 400px;
-    max-height: 70vh;
+    max-height: 80vh;
     background-color: #fff;
-    padding: 20px;
+    padding: 20px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,4 +32,33 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+}
+
+.galleryPhoto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.galleryPhoto figure{
+    height: 100px;
+    width: 76px;
+}
+
+.galleryPhoto figure img{
+    height: 100px;
+    object-fit: cover;
+}
+
+.trash{
+    background-color: black;
+    position:relative ;
+    top: -98px;
+    left: 36px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
 }

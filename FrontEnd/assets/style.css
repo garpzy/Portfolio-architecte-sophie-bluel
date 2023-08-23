@@ -24,10 +24,15 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+p{
+	line-height: 16px;
+}
+
 a{
 	text-decoration: none;
 	font: inherit;
 	color: inherit;
+	cursor: pointer;
 }
 
 html {
@@ -65,6 +70,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	background-color: #fffef8;
 }
 ol, ul {
 	list-style: none;
@@ -393,6 +399,7 @@ footer nav ul {
 
 footer{
 	margin-top: auto;
+	background-color: #FFF;
 }
 
 .separateur{
