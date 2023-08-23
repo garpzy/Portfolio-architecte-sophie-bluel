@@ -42,7 +42,7 @@
 }
 
 .galleryPhoto figure{
-    height: 100px;
+    height: fit-content;
     width: 76px;
 }
 
@@ -51,14 +51,45 @@
     object-fit: cover;
 }
 
+.btnIcons{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+    top: -98px;
+}
+
 .trash{
     background-color: black;
-    position:relative ;
+    /* position:relative ;
     top: -98px;
-    left: 36px;
+    left: 36px; */
     border-radius: 2px;
     color: #fff;
     font-size: 10px;
     width: 18px;
     height: 18px;
+    margin-right: 4px;
+}
+
+.move{
+    opacity: 0;
+    background-color: black;
+    /* position:relative ;
+    top: -98px;
+    left: 36px; */
+    border-radius: 2px;
+    color: #fff;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+
+figure:hover .move{
+    opacity: 1;
+}
+
+figure img:hover{
+    cursor: move;
 }

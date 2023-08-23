@@ -39,21 +39,24 @@ function showAllWorksModal(works){
     for (let work of works){
         let workFigureModale = document.createElement("figure")
         let workImgModale = document.createElement("img") 
+        let btnIcons = document.createElement("div") 
         let trash = document.createElement("button")
         let move = document.createElement("button")
 
         workImgModale.src = work.imageUrl
         workImgModale.alt = work.title
+        btnIcons.classList.add("btnIcons")
         trash.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         trash.classList.add("trash")
         move.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
-        move.classList.add("trash")
+        move.classList.add("move")
  
 
         gallerieModale.appendChild(workFigureModale)
         workFigureModale.appendChild(workImgModale)
-        workFigureModale.appendChild(trash)
-        workFigureModale.appendChild(move)
+        workFigureModale.appendChild(btnIcons)
+        btnIcons.appendChild(move)
+        btnIcons.appendChild(trash)
 
     }
 }
