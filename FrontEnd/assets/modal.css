@@ -34,19 +34,19 @@
     width: 100%;
 }
 
-.galleryPhoto{
+.gallerieModale{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.galleryPhoto figure{
+.gallerieModale figure{
     height: 100px;
     width: 76px;
 }
 
-.galleryPhoto figure img{
+.gallerieModale figure img{
     height: 100px;
     object-fit: cover;
 }
@@ -90,6 +90,6 @@ figure:hover .move{
     opacity: 1;
 }
 
-.galleryPhoto figure img:hover{
+.gallerieModale figure img:hover{
     cursor: move;
 }

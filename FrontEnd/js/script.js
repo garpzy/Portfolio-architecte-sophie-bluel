@@ -10,7 +10,7 @@ fetch('http://localhost:5678/api/works')
     alert(error);
     })
 
-// GOAL : à chaque projet il crée une figure dans .gallery
+// À chaque projet il crée une figure dans .gallery
 export function showAllWorks(works){
     let gallery = document.querySelector(".gallery")
     // je créé un work pour tous les works présents dans works 
@@ -19,12 +19,12 @@ export function showAllWorks(works){
         let workFigure = document.createElement("figure")
         let workImg = document.createElement("img")
         let workFigCaption = document.createElement("figcaption")
-        
+
         // inject the API data in the elements
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
-        // workFigure.id = 1
+        workFigure.id = work.id
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)
@@ -34,7 +34,9 @@ export function showAllWorks(works){
         workFigure.dataset.id = work.category.id
         //je les rends par défaut active
         workFigure.classList.add('active')
-    }
+        workFigure.classList.add('js-figure')
+
+    }    
 }
 
 //fetch les categories
@@ -128,4 +130,38 @@ btnLogout.addEventListener("click", function(){
         login.classList.remove("inactive")
     }
 })
+
+// MODALE MODIFIER LES PROJETS 
+
+let modalProjet = document.getElementById("modalProjet")
+let btnModifierProjet = document.getElementById("btnModifierProjet")
+let btnClose = document.querySelector(".close")
+let modales = document.querySelector(".dialog")
+let gallerieModale = document.querySelector(".gallerieModale")
+let figureModal = document.querySelectorAll(".js-figure")
+console.log(figureModal);
+
+function stopPropagation(e) {
+    e.stopPropagation()
+}
+
+document.querySelector(".js-modal-stop").addEventListener("click", stopPropagation)
+
+btnModifierProjet.addEventListener("click", () => {
+    modalProjet.showModal()
+  });
+
+btnClose.addEventListener("click", (event) => {
+    event.preventDefault(); 
+    modales.close();
+  });
+
+modalProjet.addEventListener("click", (event) => {
+    event.preventDefault(); 
+    modales.close();
+  });
+
+// let gallerieFig = document.createElement("div")
+// gallerieModale.appendChild(gallerieFig)
+// gallerieFig.appendChild(gallery)
 
