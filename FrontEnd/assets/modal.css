@@ -42,7 +42,7 @@
 }
 
 .galleryPhoto figure{
-    height: fit-content;
+    height: 100px;
     width: 76px;
 }
 
@@ -90,6 +90,6 @@ figure:hover .move{
     opacity: 1;
 }
 
-figure img:hover{
+.galleryPhoto figure img:hover{
     cursor: move;
 }

@@ -24,7 +24,7 @@ export function showAllWorks(works){
         workImg.src = work.imageUrl
         workImg.alt = work.title
         workFigCaption.innerText = work.title
-        // workCategoryId = work.category.id
+        // workFigure.id = 1
 
         // construct the nodes of the elements / lier au DOM
         gallery.appendChild(workFigure)

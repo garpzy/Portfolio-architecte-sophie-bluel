@@ -48,7 +48,7 @@ function showAllWorksModal(works){
         btnIcons.classList.add("btnIcons")
         trash.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         trash.classList.add("trash")
-        move.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+        move.innerHTML = '<i class="fa-solid fa-up-down-left-right"></i>'
         move.classList.add("move")
  
 
@@ -58,5 +58,13 @@ function showAllWorksModal(works){
         btnIcons.appendChild(move)
         btnIcons.appendChild(trash)
 
-    }
+        trash.addEventListener("click", deleteWork)
+
+    } 
+}
+
+function deleteWork(e) {
+    // let target = e.currentTarget.parentElement.parentElement
+    let toDeleteElement = e.target.closest('figure')
+    console.log(toDeleteElement);
 }
