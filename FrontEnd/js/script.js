@@ -34,8 +34,6 @@ export function showAllWorks(works){
         workFigure.dataset.id = work.category.id
         //je les rends par défaut active
         workFigure.classList.add('active')
-        workFigure.classList.add('js-figure')
-
     }    
 }
 
@@ -131,15 +129,13 @@ btnLogout.addEventListener("click", function(){
     }
 })
 
-// MODALE MODIFIER LES PROJETS 
+// MODALE MODIFIER LES PROJETS
 
 let modalProjet = document.getElementById("modalProjet")
 let btnModifierProjet = document.getElementById("btnModifierProjet")
 let btnClose = document.querySelector(".close")
 let modales = document.querySelector(".dialog")
 let gallerieModale = document.querySelector(".gallerieModale")
-let figureModal = document.querySelectorAll(".js-figure")
-console.log(figureModal);
 
 function stopPropagation(e) {
     e.stopPropagation()
@@ -160,8 +156,4 @@ modalProjet.addEventListener("click", (event) => {
     event.preventDefault(); 
     modales.close();
   });
-
-// let gallerieFig = document.createElement("div")
-// gallerieModale.appendChild(gallerieFig)
-// gallerieFig.appendChild(gallery)
 
