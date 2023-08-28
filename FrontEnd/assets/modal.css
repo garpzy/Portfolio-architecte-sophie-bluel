@@ -35,10 +35,12 @@
 }
 
 .gallerieModale{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
+    width: 75%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
 .gallerieModale figure{
@@ -46,7 +48,7 @@
     width: 76px;
 }
 
-.gallerieModale figure img{
+.gallerieModale figure img {
     height: 100px;
     object-fit: cover;
 }
@@ -61,23 +63,19 @@
 
 .trash{
     background-color: black;
-    /* position:relative ;
-    top: -98px;
-    left: 36px; */
+
     border-radius: 2px;
     color: #fff;
     font-size: 10px;
     width: 18px;
     height: 18px;
     margin-right: 4px;
+    opacity: 0.6;
 }
 
 .move{
     opacity: 0;
     background-color: black;
-    /* position:relative ;
-    top: -98px;
-    left: 36px; */
     border-radius: 2px;
     color: #fff;
     font-size: 10px;
@@ -87,6 +85,14 @@
 }
 
 figure:hover .move{
+    opacity: 0.6;
+}
+
+figure:hover .move:hover{
+    opacity: 1;
+}
+
+.trash:hover{
     opacity: 1;
 }
 
