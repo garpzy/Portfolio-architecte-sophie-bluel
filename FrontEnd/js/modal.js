@@ -172,7 +172,7 @@ function getImgData() {
 
 // fonction pour activer et modifier le submit de l'envoi de formulaire
 
-const submitFormulaire = document.getElementById("submitFormulaire");
+const valider = document.getElementById("valider");
 const inputImgForm = document.getElementById("imgFile");
 const inputTitreForm = document.getElementById("titre");
 const inputCategorieForm = document.getElementById("categorie");
@@ -183,8 +183,8 @@ function activateSubmitForm() {
     inputTitreForm.value !== "" &&
     inputCategorieForm.value !== ""
   ) {
-    submitFormulaire.style.backgroundColor = "#1D6154";
-    submitFormulaire.disabled = false;
+    valider.style.backgroundColor = "#1D6154";
+    valider.disabled = false;
   }
 }
 
@@ -217,32 +217,16 @@ function genererNewProjet() {
         formData.append("image", imageFormulaire);
         formData.append("title", titreFormulaire);
         formData.append("category", categorieValue);
-  
-        console.log(formData);
-  
+    
         const reponse = await fetch("http://localhost:5678/api/works", {
           method: "POST",
           headers: {
-            accept: "*/*",
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
           body: formData,
         });
         if (reponse.ok) {
           alert("Projet ajouté avec succés ");
-          let zoneModifProjets = document.querySelector(".zoneModifProjets");
-          let divGalerie = document.querySelector(".gallery");
-          let btnFiltres = document.querySelector(".filtres");
-          zoneModifProjets.innerHTML = "";
-          btnFiltres.innerHTML = "";
-          divGalerie.innerHTML = "";
-          works = await fetch("http://localhost:5678/api/works");
-          projets = await works.json();
-          genererProjets(projets);
-          btnTous(projets);
-          genererBtnFiltres(projets);
-          genererProjetsModal(projets);
-          initListener();
         } else {
           alert("Echec de l'ajout du projet");
         }
