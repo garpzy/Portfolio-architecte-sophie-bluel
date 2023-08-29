@@ -10,8 +10,8 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="stylesheet" href="./assets/modal.css">
-	<script type="module" src="./js/script.js" defer></script>
-	<script type="module" src="./js/modal.js" defer></script>
+	<script type="module" src="./js/script.js"></script>
+	<script type="module" src="./js/modal.js"></script>
 	<script src="https://kit.fontawesome.com/4b8ac7191b.js" crossorigin="anonymous"></script> 
 </head>
 <body>
@@ -26,7 +26,7 @@
 				<li><a href="#portfolio">projets</a></li>
 				<li><a href="#contact">contact</a></li>
 				<li id="login"><a href="login.html">login</a></li>
-				<li id="logout" href="index.html"><a class="edition inactive">logout</a></li>
+				<li id="logout"><a href="index.html" class="edition inactive">logout</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram" id="iconInsta"></li>
 			</ul>
 		</nav>
@@ -69,7 +69,7 @@
 				<input type="email" name="email" id="email">
 				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
-				<input type="submit" value="Envoyer">
+				<input type="submit" class="button" value="Envoyer">
 			</form>
 		</section>
 		<!-- MODALE 1 -->
@@ -98,7 +98,7 @@
 					<h3>Ajouter un projet</h3>
 					<form class="ajoutPhoto">
 						<div class="sectionAjouterPhoto">
-						  <div class="photoAjouter">
+						  <div class="photoAjoutee">
 							<!-- emplacement de l'aperçu de la photo à ajouter au projet -->
 						  </div>
 						  <i class="fa-regular fa-image"></i>
@@ -119,7 +119,7 @@
 			
 						<label for="categorie">Catégorie</label>
 						<select name="categorie" id="categorie">
-						  <option value=""></option>
+						  <option value="Categorie" label="Sélectionnez une catégorie"></option>
 						</select>
 						<div class="separateur"></div>
 						<input

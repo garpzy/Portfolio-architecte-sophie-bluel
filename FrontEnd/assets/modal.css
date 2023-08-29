@@ -1,39 +1,39 @@
 @import url(style.css);
 
 .dialog {
-    top: 0px;
-    left: 0px; 
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.8);
+  top: 0px;
+  left: 0px; 
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .modal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .modalWrapper{
-    overflow: auto;
-    width: 630px;
-    max-height: 80vh;
-    background-color: #fff;
-    padding: 20px ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    border-radius: 10px;
+  overflow: auto;
+  width: 630px;
+  max-height: 80vh;
+  background-color: #fff;
+  padding: 20px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border-radius: 10px;
 }
 
 
 
 .closeBar{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .closeBar2{
@@ -43,63 +43,68 @@
 }
 
 .modal1-content{
-    padding: 0px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  gap: 32px;
 }
 
 .gallerieModale{
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
 }
 
 .gallerieModale figure{
-    height: 100px;
-    width: 76px;
+  height: 100px;
+  width: 76px;
 }
 
 .gallerieModale figure img {
-    height: 100px;
-    width: 76px;
-    object-fit: cover;
+  height: 100px;
+  width: 76px;
+  object-fit: cover;
 }
 
 .btnIcons{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    position: relative;
-    top: -98%;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: relative;
+  top: -98%;
 }
 
 .trash{
-    background-color: black;
-    border-radius: 2px;
-    color: #fff;
-    font-size: 10px;
-    width: 18px;
-    height: 18px;
-    margin-right: 4px;
-    opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  opacity: 0.6;
 }
 
 .move{
-    opacity: 0;
-    background-color: black;
-    border-radius: 2px;
-    color: #fff;
-    font-size: 10px;
-    width: 18px;
-    height: 18px;
-    margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: black;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
 }
 
 figure:hover .move{
@@ -126,6 +131,7 @@ figure:hover .move:hover{
     width: 75%;
     text-align: left;
     margin-top: 25px;
+    gap: 12px;
   }
 
 select {
@@ -183,7 +189,7 @@ select {
     justify-content: center;;
   }
   
-  .photoAjouter {
+  .photoAjoutee {
     margin-top: 0;
     height: fit-content;
     border: none;
@@ -193,11 +199,11 @@ select {
     align-items: center;
   }
   
-  .photoAjouter img:hover {
+  .photoAjoutee img:hover {
     opacity: 0.8;
   }
   
-  .photoAjouter img {
+  .photoAjoutee img {
     width: 100%;
     height: 100%;
     display: block;

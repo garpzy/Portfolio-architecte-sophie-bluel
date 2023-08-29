@@ -23,6 +23,9 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+*{
+	font-family: 'Work Sans';
+}
 
 p{
 	line-height: 16px;
@@ -55,6 +58,7 @@ h3{
 :root{
 --green: #1D6154;
 --green-light : #3a9282;
+--green-dark : #0E2F28;
 --orange: #B1663C;
 --grey: #3D3D3D;
 --red: #D65353;
@@ -244,6 +248,8 @@ figcaption{
 
 .gallery img {
 	width: 100%;
+	height: 500px;
+	object-fit: cover;
 
 }
 #contact {
@@ -311,6 +317,11 @@ input[type="text"], input[type="password"]{
 	font-size: 16px;
 	font-weight: 700;
 	cursor: pointer;
+}
+
+.button:hover{
+	background-color: var(--green-dark);
+	border-color: var(--green-dark);
 }
 
 button{
@@ -386,6 +397,8 @@ button.edition{
 .modeEdition{
 	display: flex;
 	gap: 12px;
+	font-family: 'Work Sans';
+	font-size: 14px;
 }
 
 #modifierPhoto{
@@ -415,4 +428,15 @@ footer{
 	padding: 0px;
 	background-color: #FFF;
 	border: 0px;
+	font-size: 1rem;
+	font-family: 'Work Sans';
+}
+
+#supprimer:hover{
+	color: #642727;
+}
+
+#publishChanges{
+	font-size: 0.8rem;
+	font-family: 'Work Sans';
 }

@@ -1,4 +1,3 @@
-import { showAllWorks } from "./script.js";
 const category = await fetch("http://localhost:5678/api/categories");
 const categories = await category.json();
 let token = sessionStorage.getItem("token");
@@ -130,14 +129,14 @@ function genererCategorieModal2() {
 // fonction pour faire un apercu de l'image à uploader et controler la taille du fichier
 
 const choixImg = document.getElementById("imgFile");
-const imgPreview = document.querySelector(".photoAjouter");
+const imgPreview = document.querySelector(".photoAjoutee");
 const pFile = document.querySelector(".pFile");
 const labelFile = document.querySelector(".labelFile");
 const logoImg = document.querySelector(".fa-image");
 
 choixImg.addEventListener("change", function () {
   if (this.files[0].size > 4200000) {
-    alert("taille image > 4 mo");
+    alert("La taille de l'image est supérieure à 4 mo");
     this.value = "";
   } else {
     getImgData();
@@ -202,7 +201,7 @@ function genererNewProjet() {
       const imageFormulaire = document.getElementById("imgFile").files[0];
       const titreFormulaire = document.getElementById("titre").value;
       const categorieFormulaire = document.getElementById("categorie");
-      const categorieValue =
+      const categorieId =
         categorieFormulaire.options[categorieFormulaire.selectedIndex].id;
   
       if (
@@ -215,7 +214,7 @@ function genererNewProjet() {
         const formData = new FormData();
         formData.append("image", imageFormulaire);
         formData.append("title", titreFormulaire);
-        formData.append("category", categorieValue);
+        formData.append("category", categorieId);
     
         const reponse = await fetch("http://localhost:5678/api/works", {
           method: "POST",
