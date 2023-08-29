@@ -72,19 +72,22 @@
 				<input type="submit" value="Envoyer">
 			</form>
 		</section>
-		<!-- Les modales -->
+		<!-- MODALE 1 -->
 		<dialog id="modalProjet" class="dialog">
 			<div class="modal">
 				<div class="modalWrapper js-modal-stop">
 					<div class="closeBar"><button class="close"><i class="fa-solid fa-xmark"></i></button></div>
-					<h3>Gallerie photo</h3>
-					<div class="gallerieModale"></div>
-					<div class="separateur"></div>
-					<button id="btnAjouterProjet" class="button">Ajouter un projet</button>
-					<button id="supprimer">Supprimer la gallerie</button>
+					<div class="modal1-content">
+						<h3>Gallerie photo</h3>
+						<div class="gallerieModale"></div>
+						<div class="separateur"></div>
+						<button id="btnAjouterProjet" class="button">Ajouter un projet</button>
+						<button id="supprimer">Supprimer la gallerie</button>
+					</div>
 				</div>
 			</div>
 		</dialog>
+		<!-- MODALE 2 -->
 		<dialog id="modalProjetAjout" class="dialog">
 			<div class="modal">
 				<div class="modalWrapper js-modal2-stop">
@@ -98,7 +101,7 @@
 						  <div class="photoAjouter">
 							<!-- emplacement de l'aperçu de la photo à ajouter au projet -->
 						  </div>
-						  <i class="fa-regular fa-image fa-2xl"></i>
+						  <i class="fa-regular fa-image"></i>
 						  <div class="zone-inputFile">
 							<input
 							  type="file"

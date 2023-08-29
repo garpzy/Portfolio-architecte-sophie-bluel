@@ -182,8 +182,9 @@ function activateSubmitForm() {
     inputCategorieForm.value !== ""
   ) {
     valider.style.backgroundColor = "#1D6154";
+    valider.style.borderColor = "#1D6154";
     valider.disabled = false;
-  }
+  } 
 }
 
 inputImgForm.addEventListener("input", activateSubmitForm);
@@ -233,4 +234,3 @@ function genererNewProjet() {
   }
   
   genererNewProjet();
-  

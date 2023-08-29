@@ -113,12 +113,11 @@ let token = sessionStorage.getItem("token")
 let editions = document.querySelectorAll(".edition")
 let login = document.getElementById("login")
 for (let edition of editions){
-    //il faudrait le récupérer à partir du backEnd
-    if (token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY5MjM0ODMxNSwiZXhwIjoxNjkyNDM0NzE1fQ.O8PsHUiRxVszfNiBq3WT7ED-VJsmazDZ0ThCRvosFJs'){
-    console.log("connecté");
-    edition.classList.remove("inactive")
-    login.classList.add("inactive")
-    document.querySelector(".filtres").classList.add("inactive")
+    if(token !== null && token !== ""){
+        console.log("connecté");
+        edition.classList.remove("inactive")
+        login.classList.add("inactive")
+        document.querySelector(".filtres").classList.add("inactive")
     }
 }
 

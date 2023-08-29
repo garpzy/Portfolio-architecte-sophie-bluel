@@ -22,8 +22,8 @@ async function login(){
         sessionStorage.setItem("token", token); //sessionStorage + persistant et globale que localStorage
         console.log("connecté");
       } else {
+        alert("Email ou mot de passe incorrect")
         afficherMessageErreur();
-        console.log("une erreur c'est produite");
       }
 }
 
