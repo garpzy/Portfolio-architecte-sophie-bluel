@@ -12,7 +12,7 @@ let close1 = document.querySelector(".close")
 let gallerieModale = document.querySelector(".gallerieModale")
 
 function stopPropagation(e) {
-    e.stopPropagation()
+    e.stopPropagation();
 }
 
 document.querySelector(".js-modal-stop").addEventListener("click", stopPropagation)
@@ -61,28 +61,26 @@ export function showAllWorksModal(works){
     } 
 }
 
-
 async function deleteWork(e) {
     e.preventDefault();
     e.stopPropagation();
     let toDeleteFigure = e.target.closest('figure');
-    const toDeleteId = toDeleteFigure.id;
+    let toDeleteId = toDeleteFigure.id;
 
-    console.log(token);
     let response = await fetch(`http://localhost:5678/api/works/${toDeleteId}`, 
         {
             method: "DELETE",
             headers: {
               accept: "*/*",
               Authorization: `Bearer ${token}`,
-            },
-          }
+                },
+        }
     )
     if(response.ok){
         alert("Projet supprimé avec succés");
-        workFigureModale.remove();
-        works = await fetch("http://localhost:5678/api/works");
-        showAllWorks(works)
+        // workFigureModale.remove();
+        // works = await fetch("http://localhost:5678/api/works");
+        // showAllWorks(works)
     }
 }
 
