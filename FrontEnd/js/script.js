@@ -69,15 +69,15 @@ function filtrer(){
     let gallery = document.querySelector(".gallery")
     let works = gallery.querySelectorAll("figure")
     // par défaut Tout est sélectionné
-    let toutDefaut = document.getElementById("Tout") 
-    toutDefaut.classList.add("clicked")
+    let tout = document.getElementById("Tout") 
+    tout.classList.add("clicked")
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){
             //ma fonction pour chercker si le filtre est actif ou pas
             checkIfActive()
             
             // je récupère le categoryId du filtre où je clic 
-            let filtreActive = this.dataset.id
+            let filtreActiveId = this.dataset.id
             // je récupère aussi l'id (il n'y que "tout" qui fonctionne comme ça)
             let id = this.id
             // je vais comparer les categoryId des works avec celui du filtre actif
@@ -85,9 +85,9 @@ function filtrer(){
             // et j'ajoute la class clicked au filtre si c'est le cas
             for (let work of works){
                 work.classList.replace("active", "inactive")
-                if(filtreActive === work.dataset.id){
+                filtre.classList.add("clicked")
+                if(filtreActiveId === work.dataset.id){
                     work.classList.replace("inactive", "active")
-                    filtre.classList.add("clicked")
                 } 
                 if(id==="Tout"){
                     work.classList.replace("inactive", "active")

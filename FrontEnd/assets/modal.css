@@ -123,7 +123,7 @@ figure:hover .move:hover{
   cursor: move;
 }
 
-/* CCS MODALE 2 LZ */
+/* FORMULAIRE MODALE 2 */
 
 .formAjouterProjet {
   display: flex;
@@ -140,16 +140,9 @@ figure:hover .move:hover{
   flex-direction: column;
   align-items: center;
   height: fit-content;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   margin-top: 0px;
-}
-
-.zone-inputFile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 4px;
 }
 
 .fa-image {
@@ -180,7 +173,7 @@ figure:hover .move:hover{
   font-size: 11px;
 }
 
-.photoAjoutee {
+.imgPreview {
   margin-top: 0;
   height: fit-content;
   border: none;
@@ -190,11 +183,11 @@ figure:hover .move:hover{
   align-items: center;
 }
 
-.photoAjoutee img:hover {
+.imgPreview img:hover {
   opacity: 0.8;
 }
 
-.photoAjoutee img {
+.imgPreview img {
   width: 100%;
   height: 100%;
   display: block;
@@ -217,6 +210,13 @@ select {
   color: var(--green);
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
   border: 0px;
+}
+
+.formAjouterProjet input[type="submit"] {
+  width: 267px;
+  margin-top: 20px;
+  background-color: #a7a7a7;
+  border-color: #a7a7a7;
 }
 
 /* css formulaire modal 2 */

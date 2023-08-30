@@ -140,13 +140,13 @@ genererCategorieModal2();
 
 // fonction pour faire un apercu de l'image à uploader et controler la taille du fichier
 
-const choixImg = document.getElementById("imgFile");
-const imgPreview = document.querySelector(".photoAjoutee");
-const pFile = document.querySelector(".pFile");
-const labelFile = document.querySelector(".labelFile");
+const imgFile = document.getElementById("imgFile");
+const imgPreview = document.querySelector(".imgPreview");
+const infoFile = document.querySelector(".infoFile");
+const btnAjouterPhoto = document.getElementById("btnAjouterPhoto");
 const logoImg = document.querySelector(".fa-image");
 
-choixImg.addEventListener("change", function () {
+imgFile.addEventListener("change", function () {
   if (this.files[0].size > 4200000) {
     alert("La taille de l'image est supérieure à 4 mo");
     this.value = "";
@@ -155,33 +155,31 @@ choixImg.addEventListener("change", function () {
   }
 });
 
-imgPreview.addEventListener("click", function () {
-  const imageUniquement = document.querySelector(".photoAjoutee img");
-  labelFile.style.display = null;
-  pFile.style.display = null;
-  logoImg.style.display = null;
-  imageUniquement.style.display = "none";
-});
-
 function getImgData() {
-  const files = choixImg.files[0];
-
-  if (files) {
+  const file = imgFile.files[0];
+  if (file) {
     const fileReader = new FileReader();
-    fileReader.readAsDataURL(files);
+    fileReader.readAsDataURL(file);
     fileReader.addEventListener("load", function () {
       imgPreview.style.display = "block";
       imgPreview.innerHTML = `<img src="` + this.result + `"/>`;
-      labelFile.style.display = "none";
-      pFile.style.display = "none";
+      btnAjouterPhoto.style.display = "none";
+      infoFile.style.display = "none";
       logoImg.style.display = "none";
     });
   };
 };
 
+imgPreview.addEventListener("click", function () {
+  const imageUniquement = document.querySelector(".imgPreview img");
+  btnAjouterPhoto.style.display = null;
+  infoFile.style.display = null;
+  logoImg.style.display = null;
+  imageUniquement.style.display = "none";
+});
 // fonction pour activer et modifier le submit de l'envoi de formulaire
 
-const valider = document.getElementById("valider");
+const bntValiderPhoto = document.getElementById("bntValiderPhoto");
 const inputImgForm = document.getElementById("imgFile");
 const inputTitreForm = document.getElementById("titre");
 const inputCategorieForm = document.getElementById("categorieSelect");
@@ -192,11 +190,12 @@ function activateSubmitForm() {
     inputTitreForm.value !== "" &&
     inputCategorieForm.value !== ""
   ) {
-    valider.style.backgroundColor = "#1D6154";
-    valider.style.borderColor = "#1D6154";
-    valider.disabled = false;
+    bntValiderPhoto.style.backgroundColor = "#1D6154";
+    bntValiderPhoto.style.borderColor = "#1D6154";
+    bntValiderPhoto.disabled = false;
   } 
 };
+
 
 inputImgForm.addEventListener("input", activateSubmitForm);
 inputTitreForm.addEventListener("input", activateSubmitForm);
@@ -206,8 +205,8 @@ inputCategorieForm.addEventListener("input", activateSubmitForm);
 // fonction pour controler le remplissage du formulaire d'envoi, le creer et l'envoyer
 
 function genererNewProjet() {
-    const submitNewProjet = document.querySelector(".ajoutPhoto");
-    submitNewProjet.addEventListener("submit", async function (e) {
+    const formAjouterProjet = document.querySelector(".formAjouterProjet");
+    formAjouterProjet.addEventListener("submit", async function (e) {
       e.preventDefault();
       const imageFormulaire = document.getElementById("imgFile").files[0];
       const titreFormulaire = document.getElementById("titre").value;
