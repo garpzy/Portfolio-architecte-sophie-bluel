@@ -193,14 +193,6 @@ figcaption{
 	padding: 0px;
 }
 
-.active {
-	display: auto;
-}
-
-.inactive {
-	display: none!important;
-}
-
 .filtres{
 	display: flex;
 	flex-direction: row;

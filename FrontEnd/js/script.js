@@ -10,7 +10,7 @@ fetch('http://localhost:5678/api/works')
     })
 
 // À chaque projet il crée une figure dans .gallery
-export function showAllWorks(works){
+function showAllWorks(works){
     let gallery = document.querySelector(".gallery")
     // je créé un work pour tous les works présents dans works 
     for (let work of works){
@@ -29,11 +29,10 @@ export function showAllWorks(works){
         gallery.appendChild(workFigure)
         workFigure.appendChild(workImg)
         workFigure.appendChild(workFigCaption)
+
         // leur donner le categoryId dans un data-id
         workFigure.dataset.id = work.category.id
-        //je les rends par défaut active
-        workFigure.classList.add('active')
-    }    
+    }
 }
 
 //fetch les categories
@@ -84,13 +83,13 @@ function filtrer(){
             // je change la class des works selon si l'id est le même ou pas
             // et j'ajoute la class clicked au filtre si c'est le cas
             for (let work of works){
-                work.classList.replace("active", "inactive")
+                work.style.display = "none";
                 filtre.classList.add("clicked")
                 if(filtreActiveId === work.dataset.id){
-                    work.classList.replace("inactive", "active")
+                    work.style.display = null;
                 } 
                 if(id==="Tout"){
-                    work.classList.replace("inactive", "active")
+                    work.style.display = null;
                 }
             }            
         })
@@ -110,11 +109,13 @@ function checkIfActive(){
 let token = sessionStorage.getItem("token") 
 let editions = document.querySelectorAll(".js-edition")
 let login = document.getElementById("login")
+let filtres = document.querySelector(".filtres")
+
 for (let edition of editions){
     if(token !== null && token !== ""){
-        edition.classList.remove("inactive")
-        login.classList.add("inactive")
-        document.querySelector(".filtres").classList.add("inactive")
+        edition.style.display = null
+        login.style.display = "none"
+        filtres.style.display = "none"
     }
 }
 
@@ -122,9 +123,8 @@ for (let edition of editions){
 let btnLogout = document.getElementById("logout")
 btnLogout.addEventListener("click", () =>{
     sessionStorage.removeItem("token")
-    login.classList.remove("inactive")
-    console.log(sessionStorage);
+    login.style.display = null;
     for (let edition of editions){
-        edition.classList.toggle("inactive")
+        edition.style.display = "none"
     }
 })

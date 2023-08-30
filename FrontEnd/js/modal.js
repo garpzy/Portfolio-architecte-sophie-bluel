@@ -177,29 +177,33 @@ imgPreview.addEventListener("click", function () {
   logoImg.style.display = null;
   imageUniquement.style.display = "none";
 });
-// fonction pour activer et modifier le submit de l'envoi de formulaire
 
-const bntValiderPhoto = document.getElementById("bntValiderPhoto");
+// fonction pour activer et modifier le bouton Valider de l'envoi de formulaire
+
+const bntValiderForm = document.getElementById("bntValiderForm");
 const inputImgForm = document.getElementById("imgFile");
 const inputTitreForm = document.getElementById("titre");
 const inputCategorieForm = document.getElementById("categorieSelect");
 
-function activateSubmitForm() {
+function activerBtnValiderForm() {
   if (
     inputImgForm.files.length > 0 &&
     inputTitreForm.value !== "" &&
     inputCategorieForm.value !== ""
   ) {
-    bntValiderPhoto.style.backgroundColor = "#1D6154";
-    bntValiderPhoto.style.borderColor = "#1D6154";
-    bntValiderPhoto.disabled = false;
-  } 
+    bntValiderForm.style.backgroundColor = "#1D6154";
+    bntValiderForm.style.borderColor = "#1D6154";
+    bntValiderForm.disabled = false;
+  } else {
+    bntValiderForm.style.backgroundColor = "#a7a7a7";
+    bntValiderForm.style.borderColor = "#a7a7a7";
+    bntValiderForm.disabled = true;
+  }
 };
-
-
-inputImgForm.addEventListener("input", activateSubmitForm);
-inputTitreForm.addEventListener("input", activateSubmitForm);
-inputCategorieForm.addEventListener("input", activateSubmitForm);
+// dès qu'on rentre une info le code essaie d'activer le bouton valider, mais il faut que les trois conditions soient remplies
+inputImgForm.addEventListener("input", activerBtnValiderForm);
+inputTitreForm.addEventListener("input", activerBtnValiderForm);
+inputCategorieForm.addEventListener("input", activerBtnValiderForm);
 
 
 // fonction pour controler le remplissage du formulaire d'envoi, le creer et l'envoyer

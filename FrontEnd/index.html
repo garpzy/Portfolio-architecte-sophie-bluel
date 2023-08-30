@@ -15,7 +15,7 @@
 	<script src="https://kit.fontawesome.com/4b8ac7191b.js" crossorigin="anonymous"></script> 
 </head>
 <body>
-	<div class="barreEdition inactive js-edition">
+	<div class="barreEdition js-edition" style="display: none;">
 		<div class ="modeEdition"><i class="fa-regular fa-pen-to-square"></i>Mode édition</div>
 		<button id="publishChanges"> Publier les changements</button>
 	</div>
@@ -26,7 +26,7 @@
 				<li><a href="#portfolio">projets</a></li>
 				<li><a href="#contact">contact</a></li>
 				<li id="login"><a href="login.html">login</a></li>
-				<li id="logout"><a href="index.html" class="js-edition inactive">logout</a></li>
+				<li id="logout"><a href="index.html" class="js-edition" style="display: none;">logout</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram" id="iconInsta"></li>
 			</ul>
 		</nav>
@@ -36,7 +36,7 @@
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
 				<figcaption id="modifierPhoto">		
-				<button class="modeEdition js-edition inactive"><i class="fa-regular fa-pen-to-square"></i>Modifier</button>
+				<button class="modeEdition js-edition" style="display: none;"><i class="fa-regular fa-pen-to-square"></i>Modifier</button>
 				</figcaption>
 			</figure>
 			<article>
@@ -49,9 +49,9 @@
 		<section id="portfolio">
 			<div class="titreMesProjets">
 				<h2>Mes Projets </h2>
-				<button id="btnModifierProjet" class ="modeEdition js-edition inactive"><i class="fa-regular fa-pen-to-square"></i>Modifier</button>
+				<button id="btnModifierProjet" class ="modeEdition js-edition" style="display: none;"><i class="fa-regular fa-pen-to-square"></i>Modifier</button>
 			</div>
-			<div class="filtres js-edition">
+			<div class="filtres">
 				<div id="Tout" class="filtre">Tout</div>
 				<!-- JS injecté ici -->		
 			</div>
@@ -123,7 +123,7 @@
 							class="button"
 							type="submit"
 							value="Valider"
-							id="bntValiderPhoto"
+							id="bntValiderForm"
 							disabled
 						/>
 					</form>
