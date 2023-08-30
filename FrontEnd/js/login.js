@@ -1,15 +1,15 @@
 
-let btnConnecter = document.getElementById("connecter")
+let btnConnecter = document.getElementById("connecter");
 
 btnConnecter.addEventListener("click", function(){
     login()
-})
+});
 
 async function login(){ 
     let users = {
         email: document.getElementById("email").value,
         password: document.getElementById("mdp").value,
-    }
+    };
     let response = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,7 +25,7 @@ async function login(){
         alert("Email ou mot de passe incorrect")
         afficherMessageErreur();
       }
-}
+};
 
 function afficherMessageErreur(){
     let msgErreur = document.createElement("div")
