@@ -1,5 +1,8 @@
-const category = await fetch("http://localhost:5678/api/categories");
-const categories = await category.json();
+const fetchCategories = await fetch("http://localhost:5678/api/categories");
+const categories = await fetchCategories.json();
+const fetchWorks = await fetch("http://localhost:5678/api/works");
+const works = await fetchWorks.json();
+
 let token = sessionStorage.getItem("token");
 
 
@@ -10,6 +13,8 @@ let btnModifierProjet = document.getElementById("btnModifierProjet")
 let close1 = document.querySelector(".close")
 let gallerieModale = document.querySelector(".gallerieModale")
 
+// stop propagation pour pouvoir cliquer en dehors de la modale pour la fermer
+
 function stopPropagation(e) {
     e.stopPropagation();
 }
@@ -17,6 +22,7 @@ function stopPropagation(e) {
 document.querySelector(".js-modal-stop").addEventListener("click", stopPropagation)
 document.querySelector(".js-modal2-stop").addEventListener("click", stopPropagation)
 
+// ouverture et fermeture de la modale 1
 
 btnModifierProjet.addEventListener("click", () => {
     modalProjet.showModal()
@@ -31,6 +37,9 @@ modalProjet.addEventListener("click", (event) => {
     event.preventDefault(); 
     modalProjet.close();
   });
+
+// Générer les imgages de la modale
+// tester ici de refaire le fecth
 
 export function showAllWorksModal(works){
     for (let work of works){
@@ -60,13 +69,16 @@ export function showAllWorksModal(works){
     } 
 }
 
+showAllWorksModal(works)
+
+// fonction pour supprimer un projet
+
 async function deleteWork(e) {
     e.preventDefault();
     e.stopPropagation();
     let toDeleteFigure = e.target.closest('figure');
-    let toDeleteId = toDeleteFigure.id;
 
-    let response = await fetch(`http://localhost:5678/api/works/${toDeleteId}`, 
+    let response = await fetch(`http://localhost:5678/api/works/${toDeleteFigure.id}`, 
         {
             method: "DELETE",
             headers: {

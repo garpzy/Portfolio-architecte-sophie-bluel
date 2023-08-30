@@ -194,7 +194,7 @@ figcaption{
 }
 
 .active {
-	display: block;
+	display: auto;
 }
 
 .inactive {
