@@ -4,6 +4,7 @@ const fetchWorks = await fetch("http://localhost:5678/api/works");
 const works = await fetchWorks.json();
 
 let token = sessionStorage.getItem("token");
+let gallery = document.querySelector(".gallery")
 
 import { showAllWorks } from "./script.js";
 
@@ -77,9 +78,10 @@ showAllWorksModal(works)
 async function deleteWork(e) {
     e.preventDefault();
     e.stopPropagation();
-    let toDeleteFigure = e.target.closest('figure');
+    let toDeleteFigureModal = e.target.closest('figure');
+    let toDeleteFigurePage = document.getElementById(toDeleteFigureModal.id)
 
-    let response = await fetch(`http://localhost:5678/api/works/${toDeleteFigure.id}`, 
+    let response = await fetch(`http://localhost:5678/api/works/${toDeleteFigureModal.id}`, 
         {
             method: "DELETE",
             headers: {
@@ -90,13 +92,12 @@ async function deleteWork(e) {
     )
     if(response.ok){
         alert("Projet supprimé avec succés");
-        toDeleteFigure.remove();
-        const fetchWorks = await fetch("http://localhost:5678/api/works");
-        const works = await fetchWorks.json();
-        
-        showAllWorks(works)
+        toDeleteFigureModal.remove();
+        toDeleteFigurePage.remove()
     };
 };
+
+
 
 // MODALE 2 - AJOUTER PROJET
 
@@ -244,13 +245,38 @@ function genererNewProjet() {
         });
         if (reponse.ok) {
           alert("Projet ajouté avec succés ");
+          gallerieModale.innerHTML = "";
+          // gallery.innerHTML = "";
+          // showAllWorks(works);
+          // je refais ma fonction mais seulement sur le dernier élément, pour l'append à la gallery sans avoir à la régénérer
+          // ou bien je vide la gallery et relance la fonction, ça recharge pas la page et ça ajoute aussi la dernière figure
+          let worksFetch = await fetch("http://localhost:5678/api/works");
+          let works = await worksFetch.json();
+          let lastwork = works[works.length - 1];
+
+          let workFigureNew = document.createElement("figure");
+          let workImg = document.createElement("img");
+          let workFigCaption = document.createElement("figcaption");
+
+          workImg.src = lastwork.imageUrl;
+          workImg.alt = lastwork.title;
+          workFigCaption.innerText = lastwork.title;
+          workFigureNew.id = lastwork.id;
+
+          gallery.appendChild(workFigureNew);
+          workFigureNew.appendChild(workImg);
+          workFigureNew.appendChild(workFigCaption);
+
+          workFigureNew.dataset.id = lastwork.category.id;
+
+          showAllWorksModal(works);
+          modalProjet.showModal();
+          modalProjetAjout.close();
         } else {
           alert("Echec de l'ajout du projet");
-          modalProjetAjout.close();
-          modalProjet.showModal();
         };
       };
     });
   };
   
-  genererNewProjet();
+genererNewProjet();

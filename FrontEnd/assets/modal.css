@@ -217,13 +217,13 @@ select {
   border-color: #a7a7a7;
 }
 
-#modalProjet{
+/* #modalProjet{
   animation: fadeIn 0.3s both;
 }
 
 .anim{
   animation: slideFromTop 0.5s both;
-}
+} */
 
 
 @keyframes fadeIn {
