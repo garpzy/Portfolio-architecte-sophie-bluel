@@ -10,7 +10,7 @@ fetch('http://localhost:5678/api/works')
     })
 
 // À chaque projet il crée une figure dans .gallery
-function showAllWorks(works){
+export function showAllWorks(works){
     let gallery = document.querySelector(".gallery")
     // je créé un work pour tous les works présents dans works 
     for (let work of works){

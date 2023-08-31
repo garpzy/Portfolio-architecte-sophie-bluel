@@ -5,6 +5,7 @@ const works = await fetchWorks.json();
 
 let token = sessionStorage.getItem("token");
 
+import { showAllWorks } from "./script.js";
 
 // MODALE MODIFIER LES PROJETS
 
@@ -89,9 +90,11 @@ async function deleteWork(e) {
     )
     if(response.ok){
         alert("Projet supprimé avec succés");
-        // workFigureModale.remove();
-        // works = await fetch("http://localhost:5678/api/works");
-        // showAllWorks(works)
+        toDeleteFigure.remove();
+        const fetchWorks = await fetch("http://localhost:5678/api/works");
+        const works = await fetchWorks.json();
+        
+        showAllWorks(works)
     };
 };
 
@@ -160,6 +163,7 @@ function getImgData() {
   if (file) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
+    //quand il load le fichier on écoute "load" qui est lié au chargement d'une page
     fileReader.addEventListener("load", function () {
       imgPreview.style.display = "block";
       imgPreview.innerHTML = `<img src="` + this.result + `"/>`;
@@ -242,6 +246,8 @@ function genererNewProjet() {
           alert("Projet ajouté avec succés ");
         } else {
           alert("Echec de l'ajout du projet");
+          modalProjetAjout.close();
+          modalProjet.showModal();
         };
       };
     });
