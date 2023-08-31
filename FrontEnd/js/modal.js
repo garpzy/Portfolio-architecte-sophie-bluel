@@ -166,6 +166,7 @@ function getImgData() {
       btnAjouterPhoto.style.display = "none";
       infoFile.style.display = "none";
       logoImg.style.display = "none";
+      imgFile.style.display = "none";
     });
   };
 };

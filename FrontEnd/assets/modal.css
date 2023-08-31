@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh;  
 }
 
 .modalWrapper{
@@ -139,14 +139,12 @@ figure:hover .move:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: fit-content;
-  margin-bottom: 8px;
+  justify-content: space-between;
   margin-top: 0px;
-  gap: 4px;
+  gap: 12px;
 }
 
 .fa-image {
-  display: block;
   color: #b9c5cc;
   font-size: 4rem;
   line-height: normal;
@@ -169,13 +167,13 @@ figure:hover .move:hover{
 
 .infoFile{
   color: #444444;
-  margin: 10px 0px;
+  padding: 10px 0px;
   font-size: 11px;
 }
 
 .imgPreview {
   margin-top: 0;
-  height: fit-content;
+  object-fit: contain;
   border: none;
   margin-bottom: 0;
   display: flex;
@@ -189,7 +187,7 @@ figure:hover .move:hover{
 
 .imgPreview img {
   width: 100%;
-  height: 100%;
+  max-height: 260px;
   display: block;
 }
 
@@ -219,111 +217,38 @@ select {
   border-color: #a7a7a7;
 }
 
-/* css formulaire modal 2 */
-
-/* .formAjouterProjet {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  text-align: left;
-  margin-top: 25px;
-  gap: 12px;
+#modalProjet{
+  animation: fadeIn 0.3s both;
 }
 
-select {
-  margin-bottom: 50px;
-  background-color: white;
-  height: 50px;
-  font-family: 'Work Sans';
-  font-weight: 700;
-  font-size: 1rem;
-  padding-left: 12px;
-  color: var(--green);
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-  border: 0px;
-} */
-
-/* je sais pas à quoi sert cette class */
-/* .ajoutPhoto input[type="submit"] {
-  width: 267px;
-  margin-top: 20px;
-  background-color: #a7a7a7;
-  border-color: #a7a7a7;
-} */
-
-/* .sectionAjouterPhoto {
-  background-color: #e8f1f6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  margin-bottom: 7px;
+.anim{
+  animation: slideFromTop 0.5s both;
 }
 
-.sectionAjouterPhoto p {
-  color: #444444;
-  margin: 10px 0px;
-  font-size: 11px;
-} */
 
-/* .sectionAjouterPhoto p:hover {
-  opacity: 1;
-} */
-
-/* .fa-image {
-  display: block;
-  color: #b9c5cc;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  font-size: 4rem;
-  line-height: normal;
-} */
-
-/* .zone-inputFile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-} */
-
-/* .photoAjoutee {
-  margin-top: 0;
-  height: fit-content;
-  border: none;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.photoAjoutee img:hover {
-  opacity: 0.8;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
-.photoAjoutee img {
-  width: 100%;
-  height: 100%;
-  display: block;
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
-
-input[type="file"] {
-  height: 0;
-  width: 0;
-  overflow: hidden;
-} */
-
-/* input[type="file"] + label {
-  font-family: sans-serif;
-  background: #cbd6dc;
-  padding: 10px 30px;
-  border: 2px solid #cbd6dc;
-  border-radius: 20px;
-  color: #306685;
-  cursor: pointer;
-  transition: all 0.2s;
-} */
-
-/* input[type="file"] + label:hover {
-  opacity: 0.6;
-} */

@@ -69,6 +69,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 	display: flex;
@@ -134,10 +135,10 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	gap: 20px;
 
 }
 nav li {
-	padding: 0 10px;
 	font-size: 1.2em;
 }
 
@@ -198,7 +199,7 @@ figcaption{
 	flex-direction: row;
 	justify-content: center;
 	gap: 10px;
-	margin-bottom: 2em;
+	margin: 3em 0;
 }
 
 .filtre{
