@@ -186,7 +186,6 @@ figure:hover .move:hover{
 }
 
 .imgPreview img {
-  width: 100%;
   max-height: 260px;
   display: block;
 }

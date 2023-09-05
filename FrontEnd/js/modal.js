@@ -253,7 +253,7 @@ function genererNewProjet() {
           let worksFetch = await fetch("http://localhost:5678/api/works");
           let works = await worksFetch.json();
           let lastwork = works[works.length - 1];
-
+          
           let workFigureNew = document.createElement("figure");
           let workImg = document.createElement("img");
           let workFigCaption = document.createElement("figcaption");
