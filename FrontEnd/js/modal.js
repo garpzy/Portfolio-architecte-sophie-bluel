@@ -1,7 +1,7 @@
-const fetchCategories = await fetch("http://localhost:5678/api/categories");
-const categories = await fetchCategories.json();
-const fetchWorks = await fetch("http://localhost:5678/api/works");
-const works = await fetchWorks.json();
+let fetchCategories = await fetch("http://localhost:5678/api/categories");
+let categories = await fetchCategories.json();
+let fetchWorks = await fetch("http://localhost:5678/api/works");
+let works = await fetchWorks.json();
 
 let token = sessionStorage.getItem("token");
 let gallery = document.querySelector(".gallery")
@@ -280,3 +280,5 @@ function genererNewProjet() {
   };
   
 genererNewProjet();
+
+

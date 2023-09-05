@@ -1,13 +1,17 @@
 // fetch pour récupérer tous les works dans le backend, via Swagger
-fetch('http://localhost:5678/api/works')
-  .then(response => response.json())
-  .then(works => {
-    showAllWorks(works)
-  })
+// fetch('http://localhost:5678/api/works')
+//   .then(response => response.json())
+//   .then(works => {
+//     showAllWorks(works)
+//   })
 
-  .catch(function(error) {
-    alert(error);
-    })
+//   .catch(function(error) {
+//     alert(error);
+//     })
+
+// fetch plus court pour récupérer tous les works dans le backend, via Swagger
+let fetchWorks = await fetch("http://localhost:5678/api/works");
+let works = await fetchWorks.json();
 
 // À chaque projet il crée une figure dans .gallery
 export function showAllWorks(works){
@@ -35,17 +39,22 @@ export function showAllWorks(works){
     }
 }
 
-//fetch les categories
-fetch('http://localhost:5678/api/categories')
-  .then(response => response.json())
-  .then(categories => {
-    afficherFiltres(categories)
-    filtrer(categories)
-  })
+showAllWorks(works)
 
-  .catch(function(error) {
-    alert(error);
-})
+//fetch les categories
+// fetch('http://localhost:5678/api/categories')
+//   .then(response => response.json())
+//   .then(categories => {
+//     afficherFiltres(categories)
+//     filtrer(categories)
+//   })
+
+//   .catch(function(error) {
+//     alert(error);
+// })
+
+let fetchCategories = await fetch("http://localhost:5678/api/categories");
+let categories = await fetchCategories.json();
 
 // Afficher les filtres selon les catégories
 function afficherFiltres(categories){
@@ -61,6 +70,7 @@ function afficherFiltres(categories){
         filtres.appendChild(filtre)
     }
 }
+afficherFiltres(categories)
 
 //filtrer selon  le filtre actif ou Tout
 function filtrer(){
@@ -95,6 +105,7 @@ function filtrer(){
         })
     }
 }
+filtrer(categories)
 
 function checkIfActive(){
     let filtres = document.querySelectorAll(".filtres div")
@@ -106,10 +117,10 @@ function checkIfActive(){
 }
 
 //Récupérer le token et afficher les éléments ".js-edition" en fonction
-let token = sessionStorage.getItem("token") 
-let editions = document.querySelectorAll(".js-edition")
-let login = document.getElementById("login")
-let filtres = document.querySelector(".filtres")
+let token = sessionStorage.getItem("token");
+let editions = document.querySelectorAll(".js-edition");
+let login = document.getElementById("login");
+let filtres = document.querySelector(".filtres");
 
 for (let edition of editions){
     if(token !== null && token !== ""){
