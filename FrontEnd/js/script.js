@@ -74,12 +74,12 @@ afficherFiltres(categories)
 
 //filtrer selon  le filtre actif ou Tout
 function filtrer(){
-    let filtres = document.querySelectorAll(".filtres div")
-    let gallery = document.querySelector(".gallery")
-    let works = gallery.querySelectorAll("figure")
+    let filtres = document.querySelectorAll(".filtres div");
+    let gallery = document.querySelector(".gallery");
+    let works = gallery.querySelectorAll("figure");
     // par défaut Tout est sélectionné
-    let tout = document.getElementById("Tout") 
-    tout.classList.add("clicked")
+    let tout = document.getElementById("Tout"); 
+    tout.classList.add("clicked");
     for (let filtre of filtres){
         filtre.addEventListener("click", function(){
             //ma fonction pour chercker si le filtre est actif ou pas
@@ -108,7 +108,7 @@ function filtrer(){
 filtrer(categories)
 
 function checkIfActive(){
-    let filtres = document.querySelectorAll(".filtres div")
+    let filtres = document.querySelectorAll(".filtres div");
     for(let filtre of filtres){
         if(filtre.classList.contains("clicked")){
             filtre.classList.remove("clicked")
