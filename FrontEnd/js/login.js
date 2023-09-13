@@ -19,7 +19,7 @@ async function login(){
         let result = await response.json()
         let token = result.token; // si l'email n'est le bon il m'envoie le token, ça marche sans, mais on aura besoin du token plus tard
         window.location.href = "index.html"; //redirection
-        sessionStorage.setItem("token", token); //sessionStorage + persistant et globale que localStorage
+        sessionStorage.setItem("token", token); //sessionStorage : + persistant et globale que localStorage
         console.log("connecté");
       } else {
         alert("Email ou mot de passe incorrect")
